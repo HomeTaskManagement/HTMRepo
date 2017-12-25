@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ניהול משימות ביתיות</title>
+<style>
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+body {
+	font-family: sans-serif;
+	background: #f6f9fa;
+}
+
+h1 {
+	color: #ccc;
+	text-align: center;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+  outline: none;
+}
+
+/*Fun begins*/
+.tab_container {
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 10px;
+	position: relative;
+}
+
+input, section {
+  clear: both;
+  padding-top: 10px;
+  display: none;
+}
+
+label {
+  font-weight: 700;
+  font-size: 18px;
+  display: block;
+  float: left;
+  width: 20%;
+  padding: 1.5em;
+  color: #757575;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  background: #f0f0f0;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5 {
+  display: block;
+  padding: 20px;
+  background: #fff;
+  color: #999;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.tab_container .tab-content p,
+.tab_container .tab-content h3 {
+  -webkit-animation: fadeInScale 0.7s ease-in-out;
+  -moz-animation: fadeInScale 0.7s ease-in-out;
+  animation: fadeInScale 0.7s ease-in-out;
+}
+.tab_container .tab-content h3  {
+  text-align: center;
+}
+
+.tab_container [id^="tab"]:checked + label {
+  background: #fff;
+  box-shadow: inset 0 3px #0CE;
+}
+
+.tab_container [id^="tab"]:checked + label .fa {
+  color: #0CE;
+}
+
+label .fa {
+  font-size: 1.3em;
+  margin: 0 0.4em 0 0;
+}
+
+/*Media query*/
+@media only screen and (max-width: 900px) {
+  label span {
+    display: none;
+  }
+  
+  .tab_container {
+    width: 98%;
+  }
+}
+
+/*Content Animation*/
+@keyframes fadeInScale {
+  0% {
+  	transform: scale(0.9);
+  	opacity: 0;
+  }
+  
+  100% {
+  	transform: scale(1);
+  	opacity: 1;
+  }
+}
+
+.no_wrap {
+  text-align:center;
+  color: #0ce;
+}
+.link {
+  text-align:center;
+}
+</style>
+</head>
+<body>
+
+<h1>מערכת לניהול משימות ביתיות</h1>
+		<div class="tab_container">
+			<input id="tab1" type="radio" name="tabs" checked>
+			<label for="tab1"><i class="fa fa-code"></i><span>תיאור הבעיה</span></label>
+
+			<input id="tab2" type="radio" name="tabs">
+			<label for="tab2"><i class="fa fa-pencil-square-o"></i><span>תיאור הפיתרון</span></label>
+
+			<input id="tab3" type="radio" name="tabs">
+			<label for="tab3"><i class="fa fa-bar-chart-o"></i><span>תיאור פונקציונאלי</span></label>
+
+			<input id="tab4" type="radio" name="tabs">
+			<label for="tab4"><i class="fa fa-folder-open-o"></i><span>תיאור המודל</span></label>
+
+			<input id="tab5" type="radio" name="tabs">
+			<label for="tab5"><i class="fa fa-envelope-o"></i><span>חווית המשתמש</span></label>
+
+			<section id="content1" class="tab-content">
+				<h3>תיאור הבעיה שהפרויקט בא לפתור</h3>
+		      	<p align="center">בכל בית יש עבודות<br>
+				משימות אינסופיות שלעולם לא נגמרות<br>
+				ניקיון, ריקון פח, שטיפת כלים, כביסות ועוד<br>
+				זה קורה גם במשפחות הכי טובות<br><br>
+				
+				וכדי לנצח על זו המלאכה<br>
+				באופן מקובל ורצוי על כל בני המשפחה<br>
+				וכדי לוודא שהמשימות אכן מבוצעות<br>
+				ומצד שני בין כולם באופן הוגן מחולקות<br><br>
+				
+				וכדי לעודד את כולם להירתם ולתרום<br>
+				וגם בעת הצורך למצוא "ממלא מקום"<br>
+				וכדי לבקר זה את זה על הביצוע <br>
+				ולתת משוב חיובי ומפרגן - כשמגיע<br><br>
+				
+				לכן החלטנו "למחשב" את הפתרון<br>
+				בדגש כמובן על עיקרי הרעיון<br>
+				על-ידי מערכת לניהול משימות ביתיות<br>
+				לשיפור וייעול, בחווייתיות ודרכים מהנות<br><br>
+</p>
+			</section>
+
+			<section id="content2" class="tab-content">
+				<h3>תיאור כללי של הפתרון שהפרויקט מציע</h3>
+				<p align="center" dir="rtl">
+				פרויקט זה בא לתת מענה לבעיה המתוארת לעיל, על-ידי פיתוח מערכת שתשמש לניהול המשימות הביתיות <br>
+				ובכך יינתן מענה עבור צורך שכיח זה, המצוי בכל בית.<br>
+				המערכת תכיל יכולת ניהול ומעקב אחר המשימות, <br>
+				אפשרות הקמת משתתף, הקמת מאגר משימות ושיוך משימה למשתתף,<br>
+				כך שתהיה מותאמת לגילו ולזמינותו של כל אחד מבני הבית.<br>
+				מערכת זו  באה להקל על המנהלים -אבא / אמא,<br>
+				וכן להכניס נופך חוויתי עבור המשתתפים - בני הבית, באמצעות מעקב והגשת משובים.<br>
+				כמו"כ תינתן יכולת צפייה בהיסטוריית משימות, כך שניתן יהיה לגלות בעת הצורך מי מבני הבית ביצע משימה כלשהי,<br>
+				וכמה פעמים ובאלו תאריכים, ואם ביצע אותה על הצד הטוב ביותר.<br>
+
+				</p>		      	
+			</section>
+
+			<section id="content3" class="tab-content">
+				<h3>תיאור פונקציונאלי</h3>
+		      	<p align="center" dir="rtl">
+				למערכת שתי תצורות עבודה- תצורת מנהל ותצורת משתתף<br>
+				בתחילת שבוע ההורים ישייכו משימות לכל אחד מהילדים, בהתאם לגילו ולמשימות המועדפות עליו.<br>
+				הפעולות הנתמכות:<br>
+				1.	פעולות מנהל<br>
+				א.	הקמת משתתף חדש ועריכת משתתף קיים<br>
+				ב.	הוספת משימה ועריכתה<br>
+				ג.	שיוך משימה למשתתף<br>
+				ד.	צפייה בהיסטורית משימות<br>
+				ה.	הגדרת משימות דחופות - למימוש מידי<br>
+				ו.	ביטול משימה<br>
+				ז.	צפייה במשימות שלא בוצעו מסיבה כלשהי<br>
+				ח.	קבלת מידע אודות המשתתף שקיבל את המשוב הטוב ביותר באותו שבוע (המשתתף יקבל פרס :) )<br>
+				<br>
+				2.	פעולות משתתף<br>
+				א.	צפייה ברשימת "המשימות שלי"<br>
+				ב.	הגשת משוב על משימות של משתתפים אחרים<br>
+				ג.	מתן דיווח למשימה<br>
+				ד.	דחיית משימה
+				</p>
+			</section>
+
+			<section id="content4" class="tab-content">
+				<h3>תיאור המודל</h3>
+					<p align="center" dir="rtl">
+					מבנה הנתונים אשר ישמשו לייצוג המידע:<br><br>
+					•	"משתתף" - שם, גיל, וזמינות (בשעות ליום)<br>
+					•	"משימה"- שם משימה, תיאור המשימה, משך הזמן הנדרש לביצוע המשימה, גיל מינימלי נדרש, הגדרת מחזוריות המשימה (ימים ושעות)<br>
+					•	"משוב"- תאריך, משימה, ציון (בין 1-10)<br>
+					•	"משימה דחופה" - תיאור, רמת דחיפות (1-5), משתתף שייבצע אותה<br>
+					•	"בקשה לדחיית משימה" -  תאריך, משימה, משתתף, סיבה<br>
+
+					</p>
+			</section>
+
+			<section id="content5" class="tab-content">
+				<h3>תיאור חווית המשתמש</h3>
+		      	<p align="right" dir="rtl">
+				1.	<b>מסך ראשי</b><br>
+				מטרת המסך הראשי לרכז את מאגר המשימות הקיימות לכל משתתף. כמו-כן ממסך זה יתאפשר ניווט למסכים השונים לצורך ביצוע פעולות. המסך הראשי יחולק לשני תצורות בהתאם לסוגי המשתתפים השונים - משתתף ניהולי ומשתתף רגיל:<br>
+				א.	עבור משתתף ניהולי יופיע:<br>
+				•	טווח התאריכים למשימות (כברירת מחדל יופיעו תאריכי שבוע האחרון).<br>
+				•	 תפריט עבור הפעולות השונות ממנו תינתן גישה למסכים השונים בעזרת הכפתורים: דף הבית, הגדרת משתתף, הגדרת משימה, שיוך משימה למשתתף ומשימות מידיות.<br>
+				•	טבלת המשימות עם העמודות: תאריך, משימה, שם האחראי למשימה, בוצע וציון משוב.<br>
+				<br>
+				ב.	עבור משתתף רגיל יופיע:<br>
+				•	טווח התאריכים למשימות (כברירת מחדל יופיעו תאריכי שבוע האחרון).<br>
+				•	 תפריט עבור הפעולות השונות ממנו תינתן גישה למסכים השונים בעזרת הכפתורים: דף הבית, הגש משוב ודחה משימה.<br>
+				•	"טבלת המשימות שלי" עם העמודות: תאריך, משימה, שם האחראי למשימה ובוצע.<br>
+				</p>
+				
+				<p align="right" dir="rtl">
+				<b>מסכים לתפעול על-ידי משתמש ניהולי</b><br>
+				2.	הגדרת משתתף: שם, גיל ,זמינות<br>
+				3.	הגדרת משימה: שם משימה, תיאור, משך המשימה, גיל מינימלי נדרש, הגדרת ימים ושעות נדרשים לביצוע<br>
+				4.	שיוך משימה למשתתף: שם משתתף, שם משימה, תאריך ושעה <br>
+				5.	הקמת משימה דחופה: תיאור המשימה, רמת דחיפות בין 1 ל- 5, שם משתתף<br>
+				</p>
+				
+				<p align="right" dir="rtl">
+				<b>מסכים לתפעול על-ידי משתמש רגיל</b><br>
+				6.	משוב למשתתף פר משימה: משימה, תאריך, ציון בין 1 ל-10 <br>
+				7.	דחיית משימה: המשימה שלי, הסיבה, דחה<br>
+				</p>
+				
+			</section>
+		</div>
+
+<p class="no_wrap">
+  מגישות: מרים בר-חן ונעמה אהרוני
+</p>
+
+<p class="link">
+אפיון זה ימומש על-ידי פרויקט אנגולר 4  
+</p>
+
+
+</body>
+</html>
