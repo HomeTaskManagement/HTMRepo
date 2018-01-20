@@ -1,6 +1,6 @@
 {
-    " child" :
+    "children" :
      [ 
-      {"id" : 1 , "name" : "name" , "age" : "age", "availability": "availability" }       
-    ] 
-    }
+       {"id" : 1 , "name" : "name" , "age" : "age", "availability": "availability" }       
+     ] 
+}
