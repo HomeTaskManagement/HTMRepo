@@ -2,24 +2,15 @@
   "children": [
     {
       "id": 1,
-      "name": "name",
-      "age": "age",
-      "availability": "availability"
-    },
-    {
-      "name": "name2",
-      "age": "age2",
-      "availability": "availability2",
-      "id": 2
-    },
-    {
-      "id": 3
+      "name": "Noa",
+      "age": "18",
+      "availability": "4"
     }
   ],
 
   " tasks":
   [
-     {"id":1 ,"name":"name", "description":"description", "duration":"duration", "minimum age":"minimum age", "occurrence":"occurrence"}
-   ]
+     {"id":1 ,"name":"Dishwashing", "description":"after lunch", "duration":"1", "minimum age":"12", "occurrence":"every day"}
+  ]
  
 }
