@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "children": [
       {
         "id": 1,
@@ -47,20 +46,3 @@
       }
     ]
   }
-=======
-  "children": [
-    {
-      "id": 1,
-      "name": "Noa",
-      "age": "18",
-      "availability": "4"
-    }
-  ],
-
-  " tasks":
-  [
-     {"id":1 ,"name":"Dishwashing", "description":"after lunch", "duration":"1", "minimum age":"12", "occurrence":"every day"}
-  ]
- 
-}
->>>>>>> f4e4d3cf9a9e7f5df7db282ed920b0485ad4c5d4
