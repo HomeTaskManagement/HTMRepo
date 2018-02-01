@@ -1,4 +1,21 @@
-<div>
-  <p-rating [(ngModel)]="score"></p-rating>
-  <button type="button" (click)="addFeedback()">הגש משוב</button>
+<div class="left">
+  Feedback
+</div>
+
+<div class="right">
+  <div class="group">
+    <p-calendar [(ngModel)]="dueDate" showTime="true" showIcon=true hourFormat="24"></p-calendar>
+  </div>
+
+  <div class="group">
+    <p-dropdown [options]="tasks" [(ngModel)]="taskName" [style]="{'width':'100%'}"></p-dropdown>
+  </div>
+
+  <div class="group">
+    <p-rating [(ngModel)]="score"></p-rating>
+  </div>
+
+  <div class="group">
+    <p-button label="Send feedback" (click)="addFeedback()"></p-button>
+  </div>
 </div>

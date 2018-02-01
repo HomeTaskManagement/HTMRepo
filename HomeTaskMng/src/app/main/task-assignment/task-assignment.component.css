@@ -13,7 +13,8 @@
   }
 
   p-calendar{
-    font-size:18px;
+    font-size:15px;
+    margin-left: 2px;
     padding:6px 6px 6px 6px;
     display:block;
     width:250px;

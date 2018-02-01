@@ -1,0 +1,43 @@
+.left{
+    float: left;
+    max-width: 380px;
+    margin: 0;
+    padding: 50px;
+    padding-top: 250px;
+    font-family: aharoni;    
+    font-size: 60px;
+    margin-left: 8px;
+}
+
+.right {
+    float: right;
+    max-width: 380px;
+    margin: 0;
+    padding: 50px;
+    padding-top: 150px;
+}
+
+
+.group{ 
+    position:relative; 
+    margin-bottom:8px; 
+  }
+  
+  p-dropdown, p-button {
+    margin-left: 4px;
+    margin-right: 4px;
+    font-size:18px;
+    padding:6px 6px 6px 6px;
+    display:block;
+    width:250px;
+  }
+
+  p-calendar{
+    margin-left: 4px;
+    font-size:18px;
+    padding:6px 6px 6px 6px;
+    display:block;
+    width:250px;
+    border:none;
+  }
+  
