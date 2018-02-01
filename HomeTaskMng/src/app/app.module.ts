@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MainModule } from './main/main.module';
 import { ChildService } from './main/services/child.service';
+import { TaskService } from './main/services/task.service';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { ChildService } from './main/services/child.service';
     BrowserModule,
     MainModule
   ],
-  providers: [ChildService],
+  providers: [ChildService, TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

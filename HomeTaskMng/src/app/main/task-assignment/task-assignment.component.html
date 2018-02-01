@@ -1,0 +1,15 @@
+<div class="group">
+    <p-dropdown [options]="children" [(ngModel)]="childName" [style]="{'width':'100%'}"></p-dropdown>
+</div>
+
+<div class="group">
+    <p-dropdown [options]="tasks" [(ngModel)]="taskName" [style]="{'width':'100%'}"></p-dropdown>
+</div>
+
+<div class="group">
+    <p-calendar [(ngModel)]="dueDate" showTime="true" showIcon=true hourFormat="24"></p-calendar>
+</div>
+
+<div class="group">
+    <p-button label="Assign task to child" (click)="assignTask()"></p-button>
+</div>

@@ -1,0 +1,22 @@
+.group{ 
+    position:relative; 
+    margin-bottom:8px; 
+  }
+  
+  p-dropdown, p-button {
+    margin-left: 4px;
+    margin-right: 4px;
+    font-size:18px;
+    padding:6px 6px 6px 6px;
+    display:block;
+    width:250px;
+  }
+
+  p-calendar{
+    font-size:18px;
+    padding:6px 6px 6px 6px;
+    display:block;
+    width:250px;
+    border:none;
+  }
+  

@@ -1,0 +1,20 @@
+div {
+    float: left;
+    max-width: 380px;
+    margin: 0;
+    padding: 50px;
+    padding-top: 140px;
+}
+
+label{
+    color:rgb(75, 71, 71); 
+    font-size:18px;
+    font-weight:bold;
+    position:absolute;
+    pointer-events:none;
+    left:30px;
+    top:7px;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+  }

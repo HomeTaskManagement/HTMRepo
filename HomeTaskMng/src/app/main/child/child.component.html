@@ -1,15 +1,24 @@
-<div>
-    Name:
-    <input type="text" [(ngModel)]="name" />
+<div class="group">
+    <input type="text" [(ngModel)]="name" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label>Name</label>
 </div>
-<div>
-    Age:
-    <input type="number" [(ngModel)]="age"/>
+
+<div class="group">
+    <input type="number" [(ngModel)]="age" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label>Age</label>
 </div>
-<div>
-    Availability (Hours):
-    <input type="number" [(ngModel)]="availability"/>
+
+<div class="group">
+    <input type="number" [(ngModel)]="availability" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label>Availability (Hours)</label>
 </div>
+
 <div>
-    <button type="button" (click)="addChild()">Add</button>
+    <p-button label="Add" (click)="addChild()"></p-button>
 </div>

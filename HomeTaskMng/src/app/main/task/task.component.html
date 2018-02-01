@@ -1,23 +1,38 @@
-<!-- <div>
-  Name:
-  <input type="text" [(ngModel)]="task.name" />
+<div class="group">
+  <input type="text" [(ngModel)]="name" required>
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>Name</label>
 </div>
-<div>
-  Description:
-  <input type="text" [(ngModel)]="task.description"/>
+
+<div class="group">
+  <input type="text" [(ngModel)]="description" required>
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>Description</label>
 </div>
-<div>
-  Duration (Hours):
-  <input type="number" [(ngModel)]="task.duration"/>
+
+<div class="group">
+  <input type="number" [(ngModel)]="duration" required>
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>Duration (Hours)</label>
 </div>
-<div>
-  Minimum Age:
-  <input type="number" [(ngModel)]="task.minAge"/>
+
+<div class="group">
+  <input type="number" [(ngModel)]="minAge" required>
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>Minimum Age</label>
 </div>
-<div>
-  Occurrence (Hours):
-  <input type="number" [(ngModel)]="task.occurrence"/>
+
+<div class="group">
+  <input type="number" [(ngModel)]="occurrence" required>
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>Occurrence (Hours)</label>
 </div>
+
 <div>
-  <button type="button" (click)="addTask()">Add</button>
-</div> -->
+  <p-button label="Add" (click)="addTask()"></p-button>
+</div>

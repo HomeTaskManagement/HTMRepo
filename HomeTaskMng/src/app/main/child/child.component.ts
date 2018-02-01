@@ -9,17 +9,22 @@ import { ChildService } from '../services/child.service';
 })
 export class ChildComponent implements OnInit {
 
-  private name : string;
-  private age : number;
-  private availability : number;
+  private name: string;
+  private age: number;
+  private availability: number;
 
   constructor(private childService: ChildService) { }
 
   ngOnInit() {
   }
 
-  addChild(){
-    let child : Child = new Child(this.name, this.age, this.availability);
-    this.childService.addNewChild(child);
+  addChild() {
+    let child: Child = new Child(this.name, this.age, this.availability);
+    this.childService.addNewChild(child).then(() => {
+      console.log(child);
+      //   this.taskService.getAllTasks().subscribe(tasks => {
+      //     this.tasks = tasks;
+      // });
+    });
   }
 }
