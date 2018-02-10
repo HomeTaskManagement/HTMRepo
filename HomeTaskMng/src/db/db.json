@@ -2,60 +2,72 @@
   "children": [
     {
       "id": 1,
-      "name": "name",
-      "age": "age",
-      "availability": "availability"
+      "name": "Ariel",
+      "age": "13",
+      "availability": "4"
     },
     {
-      "name": "name2",
-      "age": "age2",
-      "availability": "availability2",
+      "name": "Noa",
+      "age": "17",
+      "availability": "2.5",
       "id": 2
     },
     {
-      "name": "aaa",
+      "name": "Shira",
+      "age": "16",
+      "availability": "3",
       "id": 3
     },
     {
       "name": "David",
+      "age": "14.5",
+      "availability": "3",
       "id": 4
     },
     {
-      "name": "yosi",
-      "age": 4,
-      "availability": 2,
+      "name": "Daniel",
+      "age": 8,
+      "availability": 6,
       "id": 5
     }
   ],
   "Tasks": [
     {
-      "id": 1,
-      "name": "task1",
-      "description": "desc of task1",
-      "duration": 3,
-      "minAge": 4,
-      "occurrence": 1
+      "name": "dishwashing",
+      "description": "2 washbasin",
+      "duration": 0.5,
+      "minAge": 12,
+      "occurrence": 7,
+      "id": 1
     },
     {
-      "name": "ww",
-      "description": "ww",
+      "name": "floor washing",
+      "description": "kitchen and living room",
       "duration": 1,
-      "minAge": 2,
+      "minAge": 15,
       "occurrence": 3,
       "id": 2
+    },
+    {
+      "name": "laundry folding",
+      "description": "can divide into two children",
+      "duration": 3,
+      "minAge": 15,
+      "occurrence": 7,
+      "id": 3
     }
   ],
   "assignedTasks": [
     {
-      "taskName": "task1",
-      "childName": "name",
-      "date": "02/06/2018 10:05 PM",
-      "feedback": 7,
+      "taskName": "laundry folding",
+      "childName": "Noa",
+      "date": "02/10/2018 22:15 PM",
+      "feedback": 0,
       "done": false,
       "id": 1
     },
     {
-      "taskName": "ww",
+      "taskName": "dishwashing",
       "childName": "David",
       "date": "02/04/2018 10:05 PM",
       "feedback": 0,
