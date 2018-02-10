@@ -23,9 +23,17 @@
     margin-bottom:8px; 
   }
   
-  p-dropdown, p-button {
+  p-dropdown {
     margin-left: 4px;
     margin-right: 4px;
+    font-size:18px;
+    padding:6px 6px 6px 6px;
+    display:block;
+    width:250px;
+  }
+
+  p-button {
+    margin-left: 55px;
     font-size:18px;
     padding:6px 6px 6px 6px;
     display:block;
@@ -41,3 +49,15 @@
     border:none;
   }
   
+  p-rating{
+    margin-left: 50px;
+    font-size:30px;    
+    padding:6px 6px 6px 6px;
+    display:block;
+    width:250px;
+  }
+
+  label{
+    font-family: aharoni;
+    font-size: 30px;
+  }

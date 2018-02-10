@@ -1,48 +1,66 @@
 {
-    "children": [
-      {
-        "id": 1,
-        "name": "name",
-        "age": "age",
-        "availability": "availability"
-      },
-      {
-        "name": "name2",
-        "age": "age2",
-        "availability": "availability2",
-        "id": 2
-      },
-      {
-        "name": "aaa",
-        "id": 3
-      },
-      {
-        "name": "David",
-        "id": 4
-      },
-      {
-        "name": "yosi",
-        "age": 4,
-        "availability": 2,
-        "id": 5
-      }
-    ],
-    "Tasks": [
-      {
-        "id": 1,
-        "name": "task1",
-        "description": "desc of task1",
-        "duration": 3,
-        "minAge": 4,
-        "occurrence": 1
-      },
-      {
-        "name": "ww",
-        "description": "ww",
-        "duration": 1,
-        "minAge": 2,
-        "occurrence": 3,
-        "id": 2
-      }
-    ]
-  }
+  "children": [
+    {
+      "id": 1,
+      "name": "name",
+      "age": "age",
+      "availability": "availability"
+    },
+    {
+      "name": "name2",
+      "age": "age2",
+      "availability": "availability2",
+      "id": 2
+    },
+    {
+      "name": "aaa",
+      "id": 3
+    },
+    {
+      "name": "David",
+      "id": 4
+    },
+    {
+      "name": "yosi",
+      "age": 4,
+      "availability": 2,
+      "id": 5
+    }
+  ],
+  "Tasks": [
+    {
+      "id": 1,
+      "name": "task1",
+      "description": "desc of task1",
+      "duration": 3,
+      "minAge": 4,
+      "occurrence": 1
+    },
+    {
+      "name": "ww",
+      "description": "ww",
+      "duration": 1,
+      "minAge": 2,
+      "occurrence": 3,
+      "id": 2
+    }
+  ],
+  "assignedTasks": [
+    {
+      "taskName": "task1",
+      "childName": "name",
+      "date": "02/06/2018 10:05 PM",
+      "feedback": 7,
+      "done": false,
+      "id": 1
+    },
+    {
+      "taskName": "ww",
+      "childName": "David",
+      "date": "02/04/2018 10:05 PM",
+      "feedback": 0,
+      "done": false,
+      "id": 2
+    }
+  ]
+}

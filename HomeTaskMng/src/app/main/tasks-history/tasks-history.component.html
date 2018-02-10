@@ -1,0 +1,26 @@
+<div class="left">
+  History
+</div>
+
+<div class="right">
+  <p-table [value]="assignedTasks"  [resizableColumns]="true">
+    <ng-template pTemplate="header">
+      <tr>
+        <th pResizableColumn>Task</th>
+        <th pResizableColumn>Child</th>
+        <th pResizableColumn>Date</th>
+        <th pResizableColumn>Feedback</th>
+        <th pResizableColumn>Done</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-singlet>
+      <tr>
+        <td>{{singlet.taskName}}</td>
+        <td>{{singlet.childName}}</td>
+        <td>{{singlet.date}}</td>
+        <td>{{singlet.feedback}}</td>
+        <td>{{singlet.done}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

@@ -5,6 +5,7 @@ import { ChildService } from '../services/child.service';
 import { Task } from '../model/task';
 import { TaskService } from '../services/task.service';
 import { DbChild } from '../../../db/dbchild';
+import * as moment from 'moment';
 
 @Component({
   selector: 'task-assignment',
@@ -14,8 +15,8 @@ import { DbChild } from '../../../db/dbchild';
 
 export class TaskAssignmentComponent implements OnInit {
 
-  private childName: string;
-  private taskName: string;
+  private child: Child;
+  private task: Task;
   private dueDate: Date;
 
   private children: Array<Object>;
@@ -45,7 +46,6 @@ export class TaskAssignmentComponent implements OnInit {
             child.availability)
         })
       });
-
     });
   }
 
@@ -68,8 +68,15 @@ export class TaskAssignmentComponent implements OnInit {
   }
 
   assignTask() {
-    //To-Do: change to id's and call to save service...
-    let assignedTask: AssignedTask = new AssignedTask(this.taskName, this.childName, this.dueDate);
-    console.log(this.childName, this.taskName, this.dueDate);
+    console.log(this.task, this.child, this.dueDate);
+      
+    let formatDate = moment(this.dueDate).format('L LT');
+    let taskToAssign = new AssignedTask(this.task.name, this.child.name, formatDate, 0, false);
+    this.taskService.assignTask(taskToAssign).then(() => {
+      //Todo: popup message?
+      console.log(taskToAssign);
+    });
+    
   }
+
 }

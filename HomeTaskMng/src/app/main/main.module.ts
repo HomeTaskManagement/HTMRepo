@@ -9,7 +9,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
 import { RatingModule } from 'primeng/rating';
 import { ButtonModule } from 'primeng/button';
-
+import { TableModule } from 'primeng/table';
 
 import { ChildComponent } from './child/child.component';
 import { TaskComponent } from './task/task.component';
@@ -18,6 +18,7 @@ import { AccordionPanelComponent } from './accordion-panel/accordion-panel.compo
 import { ContentComponent } from './content/content.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TasksHistoryComponent } from './tasks-history/tasks-history.component';
 
 @NgModule({
   imports: [
@@ -28,11 +29,12 @@ import { HttpClientModule } from '@angular/common/http';
     CalendarModule,
     RatingModule,
     ButtonModule,
+    TableModule,
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  declarations: [ChildComponent, TaskComponent, TaskAssignmentComponent, AccordionPanelComponent, ContentComponent, FeedbackComponent],
-  exports: [AccordionPanelComponent, ContentComponent, ChildComponent, TaskComponent, TaskAssignmentComponent, FeedbackComponent]
+  declarations: [ChildComponent, TaskComponent, TaskAssignmentComponent, AccordionPanelComponent, ContentComponent, FeedbackComponent, TasksHistoryComponent],
+  exports: [AccordionPanelComponent, ContentComponent, ChildComponent, TaskComponent, TaskAssignmentComponent, FeedbackComponent, TasksHistoryComponent]
 })
 export class MainModule { }

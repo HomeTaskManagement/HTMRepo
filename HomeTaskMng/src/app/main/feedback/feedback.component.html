@@ -4,18 +4,19 @@
 
 <div class="right">
   <div class="group">
-    <p-calendar [(ngModel)]="dueDate" showTime="true" showIcon=true hourFormat="24"></p-calendar>
+    <p-calendar [(ngModel)]="dueDate" showIcon=true (onSelect)="loadTasksByDate()"></p-calendar>
   </div>
 
   <div class="group">
-    <p-dropdown [options]="tasks" [(ngModel)]="taskName" [style]="{'width':'100%'}"></p-dropdown>
+    <p-dropdown [options]="tasksByDate" [(ngModel)]="selectedTask" [style]="{'width':'100%'}" placeholder="select a task"></p-dropdown>
   </div>
 
   <div class="group">
-    <p-rating [(ngModel)]="score"></p-rating>
+    <!-- <label>Score</label> -->
+    <p-rating [(ngModel)]="score" [cancel]="false"></p-rating>
   </div>
 
   <div class="group">
-    <p-button label="Send feedback" (click)="addFeedback()"></p-button>
+    <p-button label="Send feedback" (click)="sendFeedback()"></p-button>
   </div>
 </div>
