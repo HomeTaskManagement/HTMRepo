@@ -22,9 +22,9 @@ export class ChildComponent implements OnInit {
     let child: Child = new Child(this.name, this.age, this.availability);
     this.childService.addNewChild(child).then(() => {
       console.log(child);
-      //   this.taskService.getAllTasks().subscribe(tasks => {
-      //     this.tasks = tasks;
-      // });
+       this.childService.getChildren().subscribe(child => {
+       this.child = child;
+       });
     });
   }
 }
