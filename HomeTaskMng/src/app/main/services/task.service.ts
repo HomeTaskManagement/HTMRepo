@@ -67,13 +67,7 @@ export class TaskService {
             console.log('sendFeedback - task not found');
             return null; 
         }
-        
-        
-
-        //dbTaskAssignment = await this.httpClient.patch<DbTaskAssignment>(environment.baseUrl + '/assignedTasks/', dbTask).toPromise();        
-
-        
-               
+    
     }
 
 }

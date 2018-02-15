@@ -10,6 +10,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { RatingModule } from 'primeng/rating';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
+import {InputSwitchModule} from 'primeng/inputswitch';
 
 import { ChildComponent } from './child/child.component';
 import { TaskComponent } from './task/task.component';
@@ -19,6 +20,7 @@ import { ContentComponent } from './content/content.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TasksHistoryComponent } from './tasks-history/tasks-history.component';
+import { ReportingComponent } from './reporting/reporting.component';
 
 @NgModule({
   imports: [
@@ -30,11 +32,12 @@ import { TasksHistoryComponent } from './tasks-history/tasks-history.component';
     RatingModule,
     ButtonModule,
     TableModule,
+    InputSwitchModule,
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  declarations: [ChildComponent, TaskComponent, TaskAssignmentComponent, AccordionPanelComponent, ContentComponent, FeedbackComponent, TasksHistoryComponent],
-  exports: [AccordionPanelComponent, ContentComponent, ChildComponent, TaskComponent, TaskAssignmentComponent, FeedbackComponent, TasksHistoryComponent]
+  declarations: [ChildComponent, TaskComponent, TaskAssignmentComponent, AccordionPanelComponent, ContentComponent, FeedbackComponent, TasksHistoryComponent, ReportingComponent],
+  exports: [AccordionPanelComponent, ContentComponent, ChildComponent, TaskComponent, TaskAssignmentComponent, FeedbackComponent, TasksHistoryComponent, ReportingComponent]
 })
 export class MainModule { }

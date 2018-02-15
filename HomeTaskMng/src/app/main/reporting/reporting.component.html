@@ -1,0 +1,21 @@
+<div class="left">
+  Reporting
+</div>
+
+<div class="right">
+
+  <div class="group">
+    <p-calendar [(ngModel)]="dueDate" showIcon=true (onSelect)="loadTasksByDateAndUser()"></p-calendar>
+  </div>
+
+  <div class="group">
+    <li *ngFor="let tomeTask of tomeByDateTasks">
+      <label>{{tomeTask.taskName}}</label>
+      <p-inputSwitch onLabel="Done" offLabel="Rejected" [(ngModel)]="tomeTask.done"></p-inputSwitch>
+    </li>
+  </div>
+
+  <div class="group">
+    <p-button label="Save" (click)="saveTasksStates()"></p-button>
+  </div>
+</div>
