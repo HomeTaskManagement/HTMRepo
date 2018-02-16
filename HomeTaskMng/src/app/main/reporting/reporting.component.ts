@@ -16,25 +16,31 @@ export class ReportingComponent implements OnInit {
   private dueDate: Date;
   private formatDueDate: string;
   private tomeByDateTasks: AssignedTask[] = [];
-  
+
   constructor(private taskService: TaskService) { }
 
   ngOnInit() {
-    this.taskService.getAssignedTasks().subscribe(dbTaskAssignment => {
-      this.allAssignedToMeTasks = dbTaskAssignment.filter(s => s.childName === this.loginUser);
+    this.taskService.getAssignedTasks().subscribe(taskAssignment => {
+      this.allAssignedToMeTasks = taskAssignment.filter(s => s.childName === this.loginUser);
     });
   }
 
   loadTasksByDateAndUser() {
     this.formatDueDate = moment(new Date(this.dueDate)).format('L');
     this.allAssignedToMeTasks.forEach(task => {
-      let currTaskDate = task.date.slice(0,10);
-      if (currTaskDate === this.formatDueDate){
-        this.tomeByDateTasks.push(task);        
+      let currTaskDate = task.date.slice(0, 10);
+      if (currTaskDate === this.formatDueDate) {
+        this.tomeByDateTasks.push(task);
       }
     });
     console.log('tomeByDateTasks', this.tomeByDateTasks);
-    
+  }
+
+  saveTasksStates() {
+    this.allAssignedToMeTasks.forEach(task => {
+      console.log(task);
+      this.taskService.report(task);
+    });
   }
 
 }

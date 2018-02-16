@@ -1,5 +1,6 @@
 export class Child {
-    constructor(readonly name:string, 
-                readonly age: number, 
-                readonly availability: number){}
+    constructor(public id: number,
+        public name: string,
+        public age: number,
+        public availability: number) { }
 }

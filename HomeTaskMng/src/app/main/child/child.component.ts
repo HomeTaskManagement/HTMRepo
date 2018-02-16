@@ -19,9 +19,9 @@ export class ChildComponent implements OnInit {
   }
 
   addChild() {
-    let child: Child = new Child(this.name, this.age, this.availability);
+    let child: Child = new Child(null, this.name, this.age, this.availability);
     this.childService.addNewChild(child).then(() => {
-      console.log(child);
+      console.log('new child added:' ,child);
       //   this.taskService.getAllTasks().subscribe(tasks => {
       //     this.tasks = tasks;
       // });

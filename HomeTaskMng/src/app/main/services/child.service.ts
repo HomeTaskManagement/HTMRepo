@@ -1,5 +1,4 @@
 import { Child } from "../model/child";
-import { DbChild } from "../../../db/dbchild";
 import { Injectable } from "@angular/core/";
 import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs/Observable";
@@ -11,24 +10,13 @@ export class ChildService {
 
     constructor(private httpClient: HttpClient) { }
 
-    // addNewChild(child: Child) {
-    //     if (!this.children) {
-    //         this.children = new Array<Child>();
-    //     }
-    //     this.children.push(child);
-    // }
-
     async addNewChild(child: Child): Promise<void> {
-        let dbChild: DbChild = new DbChild();
-        dbChild.name = child.name;
-        dbChild.age = child.age;
-        dbChild.availability = child.availability;
-        dbChild = await this.httpClient.post<DbChild>(environment.baseUrl + '/children', dbChild).toPromise();        
+        let ichild = await this.httpClient.post<Child>(environment.baseUrl + '/children', child).toPromise();        
     }
 
-    getChildren(): Observable<DbChild[]> {
+    getChildren(): Observable<Child[]> {
         let tasksUrl = environment.baseUrl + '/children';
-        return this.httpClient.get<DbChild[]>(tasksUrl);
+        return this.httpClient.get<Child[]>(tasksUrl);
     }
 
 

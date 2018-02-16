@@ -21,7 +21,7 @@ export class TaskComponent implements OnInit {
   }
 
   addTask() {
-    let task: Task = new Task(this.name, this.description, this.duration, this.minAge, this.occurrence);
+    let task: Task = new Task(null, this.name, this.description, this.duration, this.minAge, this.occurrence);
     this.taskService.addNewTask(task).then(() => {
       console.log(task);
       //   this.taskService.getAllTasks().subscribe(tasks => {

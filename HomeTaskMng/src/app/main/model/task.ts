@@ -1,7 +1,8 @@
 export class Task {
-    constructor(readonly name: string, 
-                readonly description: string,                
-                readonly duration: number,
-                readonly minAge: number, 
-                readonly occurrence: number){}
+    constructor(public id: number,
+        public name: string,
+        public description: string,
+        public duration: number,
+        public minAge: number,
+        public occurrence: number) { }
 }

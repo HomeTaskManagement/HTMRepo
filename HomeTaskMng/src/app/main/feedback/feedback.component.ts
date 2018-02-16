@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../services/task.service';
-import { DbTask } from '../../../db/dbTask';
+import { Task } from '../model/Task';
 import { AssignedTask } from '../model/assignedTask';
 import * as moment from 'moment';
 
@@ -23,8 +23,8 @@ export class FeedbackComponent implements OnInit {
 
   ngOnInit() {
 
-    this.taskService.getAssignedTasks().subscribe(dbTaskAssignment => {
-      this.allAssignedTasks = dbTaskAssignment;
+    this.taskService.getAssignedTasks().subscribe(taskAssignment => {
+      this.allAssignedTasks = taskAssignment;
     });
   }
 
@@ -42,8 +42,7 @@ export class FeedbackComponent implements OnInit {
   }
 
   sendFeedback(){
-    console.log("sendFeedback");
-    //this.selectedTask.feedback = this.score;
+    console.log("sendFeedback- feedback has been sent with score: ", this.score);    
     this.taskService.sendFeedback(this.selectedTask, this.score);
   }
 }

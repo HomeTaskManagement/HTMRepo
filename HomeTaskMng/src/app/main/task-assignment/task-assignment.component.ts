@@ -4,7 +4,6 @@ import { Child } from '../model/child';
 import { ChildService } from '../services/child.service';
 import { Task } from '../model/task';
 import { TaskService } from '../services/task.service';
-import { DbChild } from '../../../db/dbchild';
 import * as moment from 'moment';
 
 @Component({
@@ -37,13 +36,10 @@ export class TaskAssignmentComponent implements OnInit {
     // for (let child of svcChildren) {
     //   this.children.push({ 'label': child.name, 'value': child });
     // }
-    this.childService.getChildren().subscribe(dbChild => {
-      dbChild.forEach(child => {
+    this.childService.getChildren().subscribe(childs => {
+      childs.forEach(child => {
         this.children.push({
-          'label': child.name, 'value': new Child(
-            child.name,
-            child.age,
-            child.availability)
+          'label': child.name, 'value': child
         })
       });
     });
@@ -52,31 +48,26 @@ export class TaskAssignmentComponent implements OnInit {
   initTasks() {
     this.tasks = new Array<Object>();
 
-    this.taskService.getAllTasks().subscribe(dbtasks => {
-      dbtasks.forEach(task => {
+    this.taskService.getAllTasks().subscribe(tasks => {
+      tasks.forEach(task => {
         this.tasks.push({
-          'label': task.name, 'value': new Task(
-            task.name,
-            task.description,
-            task.duration,
-            task.minAge,
-            task.duration)
+          'label': task.name, 'value': task
         });
       });
-      console.log(this.tasks);
+      console.log('all Tasks: ', this.tasks);
     });
   }
 
   assignTask() {
     console.log(this.task, this.child, this.dueDate);
-      
+
     let formatDate = moment(this.dueDate).format('L LT');
-    let taskToAssign = new AssignedTask(this.task.name, this.child.name, formatDate, 0, false);
+    let taskToAssign = new AssignedTask(null, this.task.name, this.child.name, formatDate, 0, 0, false);
     this.taskService.assignTask(taskToAssign).then(() => {
       //Todo: popup message?
       console.log(taskToAssign);
     });
-    
+
   }
 
 }

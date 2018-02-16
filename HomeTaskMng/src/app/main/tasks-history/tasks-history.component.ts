@@ -16,8 +16,8 @@ export class TasksHistoryComponent implements OnInit {
   assignedTasks = new Array<AssignedTask>();
 
   ngOnInit() {
-    this.taskService.getAssignedTasks().subscribe(dbTaskAssignment => {
-      this.assignedTasks = dbTaskAssignment;
+    this.taskService.getAssignedTasks().subscribe(taskAssignment => {
+      this.assignedTasks = taskAssignment;
     });
   }
 

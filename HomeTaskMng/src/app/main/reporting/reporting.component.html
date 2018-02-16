@@ -9,10 +9,25 @@
   </div>
 
   <div class="group">
-    <li *ngFor="let tomeTask of tomeByDateTasks">
+    <!-- <li *ngFor="let tomeTask of tomeByDateTasks">
       <label>{{tomeTask.taskName}}</label>
       <p-inputSwitch onLabel="Done" offLabel="Rejected" [(ngModel)]="tomeTask.done"></p-inputSwitch>
-    </li>
+    </li> -->
+
+    <div class="wrap">
+      <div class="header">
+        <span>Todo List</span>
+      </div>
+      <div class="wrap-list">
+        <ol class="list">
+          <li *ngFor="let tomeTask of tomeByDateTasks">
+            <input type="checkbox" id="check-1" [(ngModel)]="tomeTask.done">
+            <label for="check-1">{{tomeTask.taskName}}</label>
+          </li>
+        </ol>
+      </div>
+    </div>
+    
   </div>
 
   <div class="group">

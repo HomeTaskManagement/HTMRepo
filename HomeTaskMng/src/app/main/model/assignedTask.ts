@@ -1,7 +1,9 @@
 export class AssignedTask {
-    constructor(readonly taskName: string, 
-                readonly childName: string,                
-                readonly date: string,
-                readonly feedback : number,
-                readonly done: boolean){}
+    constructor(public id: number,
+        public taskName: string,
+        public childName: string,
+        public date: string,
+        public feedback: number,
+        public feedbackCounter: number,
+        public done: boolean) { }
 }
