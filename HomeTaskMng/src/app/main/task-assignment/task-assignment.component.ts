@@ -5,6 +5,7 @@ import { ChildService } from '../services/child.service';
 import { Task } from '../model/task';
 import { TaskService } from '../services/task.service';
 import * as moment from 'moment';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'task-assignment',
@@ -21,7 +22,28 @@ export class TaskAssignmentComponent implements OnInit {
   private children: Array<Object>;
   private tasks: Array<Object>;
 
-  constructor(private childService: ChildService, private taskService: TaskService) { }
+  newChildsubscription: Subscription;
+  newTasksubscription: Subscription;
+
+  constructor(private childService: ChildService, private taskService: TaskService) {
+    // listen to new child added event
+    this.newChildsubscription = childService.childAdded$.subscribe(
+      child => {
+        console.log('child from subject: ', child);
+        this.children.push({
+          'label': child.name, 'value': child
+        });
+    });
+
+    // listen to new task added event
+    this.newTasksubscription = taskService.taskAdded$.subscribe(
+      task => {
+        console.log('child from subject: ', task);
+        this.tasks.push({
+          'label': task.name, 'value': task
+        });
+    });
+   }
 
   ngOnInit() {
     this.initChildren();
@@ -30,12 +52,7 @@ export class TaskAssignmentComponent implements OnInit {
 
   initChildren() {
     this.children = new Array<Object>();
-    // let svcChildren: Child[];
-    // svcChildren = this.childService.getChildren();
 
-    // for (let child of svcChildren) {
-    //   this.children.push({ 'label': child.name, 'value': child });
-    // }
     this.childService.getChildren().subscribe(childs => {
       childs.forEach(child => {
         this.children.push({

@@ -29,12 +29,6 @@
       "age": 8,
       "availability": 6,
       "id": 5
-    },
-    {
-      "id": 6,
-      "name": "ccc",
-      "age": 3,
-      "availability": 2
     }
   ],
   "Tasks": [
@@ -61,14 +55,6 @@
       "minAge": 15,
       "occurrence": 7,
       "id": 3
-    },
-    {
-      "id": 4,
-      "name": "www",
-      "description": "wwwdddd",
-      "duration": 2,
-      "minAge": 3,
-      "occurrence": 4
     }
   ],
   "assignedTasks": [
@@ -78,7 +64,7 @@
       "date": "02/10/2018 22:15 PM",
       "feedback": 0,
       "feedbackCounter": 0,
-      "done": true,
+      "done": false,
       "id": 1
     },
     {
@@ -98,15 +84,6 @@
       "feedbackCounter": 0,
       "done": false,
       "id": 3
-    },
-    {
-      "id": 4,
-      "taskName": "www",
-      "childName": "ccc",
-      "date": "02/01/2018 11:08 AM",
-      "feedback": 8,
-      "feedbackCounter": 2,
-      "done": false
     }
   ]
 }

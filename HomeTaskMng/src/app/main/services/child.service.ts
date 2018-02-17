@@ -3,15 +3,22 @@ import { Injectable } from "@angular/core/";
 import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs/Observable";
 import { environment } from '../../../environments/environment';
+import { Subject }    from 'rxjs/Subject';
 
 @Injectable()
 export class ChildService {
     private children: Child[];
+    private childAddedSrc = new Subject<Child>();
 
-    constructor(private httpClient: HttpClient) { }
+    childAdded$ = this.childAddedSrc.asObservable();
+
+    constructor(private httpClient: HttpClient) { 
+
+    }
 
     async addNewChild(child: Child): Promise<void> {
-        let ichild = await this.httpClient.post<Child>(environment.baseUrl + '/children', child).toPromise();        
+        let ichild = await this.httpClient.post<Child>(environment.baseUrl + '/children', child).toPromise();
+        this.childAddedSrc.next(ichild);
     }
 
     getChildren(): Observable<Child[]> {
