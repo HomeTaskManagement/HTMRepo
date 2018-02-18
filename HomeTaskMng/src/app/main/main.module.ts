@@ -21,6 +21,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TasksHistoryComponent } from './tasks-history/tasks-history.component';
 import { ReportingComponent } from './reporting/reporting.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -37,7 +38,7 @@ import { ReportingComponent } from './reporting/reporting.component';
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  declarations: [ChildComponent, TaskComponent, TaskAssignmentComponent, AccordionPanelComponent, ContentComponent, FeedbackComponent, TasksHistoryComponent, ReportingComponent],
+  declarations: [ChildComponent, TaskComponent, TaskAssignmentComponent, AccordionPanelComponent, ContentComponent, FeedbackComponent, TasksHistoryComponent, ReportingComponent, LoginComponent],
   exports: [AccordionPanelComponent, ContentComponent, ChildComponent, TaskComponent, TaskAssignmentComponent, FeedbackComponent, TasksHistoryComponent, ReportingComponent]
 })
 export class MainModule { }
