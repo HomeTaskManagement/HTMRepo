@@ -1,4 +1,4 @@
-.left{
+/* .left{
     float: left;
     max-width: 380px;
     margin: 0;
@@ -7,12 +7,23 @@
     font-family: aharoni;    
     font-size: 60px;
     margin-left: 8px;
+} */
+.left{
+    float: left;
+    max-width: 1200px;
+    margin: 0;
+    padding: 50px;
+    padding-top: 130px;
+    margin-left: 8px;
 }
 
+span{
+    font-family: aharoni;    
+    font-size: 60px;
+}
 .right {
     float: right;
     max-width: 950px;
     margin: 0;
-    padding: 10px;
-    padding-top: 50px;
+    /* padding-top: 30px; */
 }

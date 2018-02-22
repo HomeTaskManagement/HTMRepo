@@ -1,28 +1,22 @@
-<div class="left">
-    Settings
-</div>
+<p-accordion>
+    <p-accordionTab>
+        <p-header>
+            <label>Tasks Definitions</label>
+        </p-header>
+        <task></task>
+    </p-accordionTab>
 
-<div class="right">
-    <p-accordion>
-        <p-accordionTab>
-            <p-header>
-                <label>Tasks Definitions</label>
-            </p-header>
-            <task></task>
-        </p-accordionTab>
+    <p-accordionTab>
+        <p-header>
+            <label>Childs Definitions</label>
+        </p-header>
+        <child></child>
+    </p-accordionTab>
 
-        <p-accordionTab>
-            <p-header>
-                <label>Childs Definitions</label>
-            </p-header>
-            <child></child>
-        </p-accordionTab>
-
-        <p-accordionTab header="Tasks Assignments">
-            <p-header>
-                <label>Tasks Assignments</label>
-            </p-header>
-            <task-assignment></task-assignment>
-        </p-accordionTab>
-    </p-accordion>
-</div>
+    <p-accordionTab header="Tasks Assignments">
+        <p-header>
+            <label>Tasks Assignments</label>
+        </p-header>
+        <task-assignment></task-assignment>
+    </p-accordionTab>
+</p-accordion>

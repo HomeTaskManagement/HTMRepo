@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
+import { Message } from 'primeng/api';
+import * as moment from 'moment';
+import { environment } from '../../../environments/environment';
+
 import { AssignedTask } from '../model/assignedTask';
 import { Child } from '../model/child';
-import { ChildService } from '../services/child.service';
 import { Task } from '../model/task';
+
+import { ChildService } from '../services/child.service';
 import { TaskService } from '../services/task.service';
-import * as moment from 'moment';
-import { Subscription } from 'rxjs/Subscription';
+
 
 @Component({
   selector: 'task-assignment',
@@ -21,7 +26,8 @@ export class TaskAssignmentComponent implements OnInit {
 
   private children: Array<Object>;
   private tasks: Array<Object>;
-
+  private msgs: Message[] = [];
+  
   newChildsubscription: Subscription;
   newTasksubscription: Subscription;
 
@@ -33,7 +39,7 @@ export class TaskAssignmentComponent implements OnInit {
         this.children.push({
           'label': child.name, 'value': child
         });
-    });
+      });
 
     // listen to new task added event
     this.newTasksubscription = taskService.taskAdded$.subscribe(
@@ -42,8 +48,8 @@ export class TaskAssignmentComponent implements OnInit {
         this.tasks.push({
           'label': task.name, 'value': task
         });
-    });
-   }
+      });
+  }
 
   ngOnInit() {
     this.initChildren();
@@ -77,13 +83,20 @@ export class TaskAssignmentComponent implements OnInit {
 
   assignTask() {
     console.log(this.task, this.child, this.dueDate);
-
     let formatDate = moment(this.dueDate).format('L LT');
     let taskToAssign = new AssignedTask(null, this.task.name, this.child.name, formatDate, 0, 0, false);
     this.taskService.assignTask(taskToAssign).then(() => {
-      //Todo: popup message?
       console.log(taskToAssign);
+      this.msgs.push({ severity: 'success', summary: 'Success assign task', detail: `task ${this.task.name} assigned to ${this.child.name}` });
+      this.clearFields();
     });
+  }
+
+  clearFields() {
+    this.child = null;
+    this.task = null;
+    this.dueDate = null;
+    setTimeout(() => this.msgs = [], environment.msgTimeout);
 
   }
 

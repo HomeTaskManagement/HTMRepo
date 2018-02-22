@@ -26,6 +26,15 @@ export class ChildService {
         return this.httpClient.get<Child[]>(tasksUrl);
     }
 
+    async updateChildDetails(child: Child): Promise<void> {
+        let dbChild = {
+            name: child.name,
+            age: child.age,
+            availability: child.availability
+        };
+
+        await this.httpClient.patch(environment.baseUrl + '/children' + '/' + child.id, dbChild).toPromise();
+    }
 
     // --- Mockup
     // getChildren(){

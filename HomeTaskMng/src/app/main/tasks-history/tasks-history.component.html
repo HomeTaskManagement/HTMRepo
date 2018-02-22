@@ -1,26 +1,37 @@
 <div class="left">
-  Assigned <br/> Tasks
-</div>
+  <span>Assigned
+    <br/> Tasks</span>
 
-<div class="right">
-  <p-table [value]="assignedTasks"  [resizableColumns]="true">
-    <ng-template pTemplate="header">
+  <p-table #dt [columns]="cols" [value]="assignedTasks" [(contextMenuSelection)]="selectedTask" [contextMenu]="cm" [scrollable]="true"
+    scrollHeight="252px">
+    <ng-template pTemplate="header" let-columns>
       <tr>
-        <th pResizableColumn>Task</th>
-        <th pResizableColumn>Child</th>
-        <th pResizableColumn>Date</th>
-        <th pResizableColumn>Feedback</th>
-        <th pResizableColumn>Done</th>
+        <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+          {{col.header}}
+          <p-sortIcon [field]="col.field"></p-sortIcon>
+        </th>
+      </tr>
+      <tr>
+        <th *ngFor="let col of columns">
+          <input pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+        </th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-singlet>
-      <tr>
-        <td>{{singlet.taskName}}</td>
-        <td>{{singlet.childName}}</td>
-        <td>{{singlet.date}}</td>
-        <td>{{singlet.feedback / singlet.feedbackCounter}}</td>        
-        <td>{{singlet.done}}</td>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr [pSelectableRow]="rowData" [pContextMenuRow]="rowData">
+        <!-- <td *ngFor="let col of columns">
+          {{rowData[col.field]}}
+        </td>     -->
+        <td>{{rowData.taskName}}</td>
+        <td>{{rowData.childName}}</td>
+        <td>{{rowData.date}}</td>
+        <td>{{rowData.feedback / rowData.feedbackCounter}}</td>
+        <td>{{rowData.done}}</td>
       </tr>
     </ng-template>
   </p-table>
+
+  <p-contextMenu #cm [model]="items" appendTo="body"> </p-contextMenu>
 </div>
+
+<p-growl [(value)]="msgs" appendTo="body"></p-growl>

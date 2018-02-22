@@ -10,7 +10,11 @@ import { CalendarModule } from 'primeng/calendar';
 import { RatingModule } from 'primeng/rating';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
-import {InputSwitchModule} from 'primeng/inputswitch';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { ContextMenuModule } from 'primeng/contextmenu';
+import { TriStateCheckboxModule } from 'primeng/tristatecheckbox';
+import { DialogModule } from 'primeng/dialog';
+import { GrowlModule } from 'primeng/growl';
 
 import { ChildComponent } from './child/child.component';
 import { TaskComponent } from './task/task.component';
@@ -21,6 +25,9 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TasksHistoryComponent } from './tasks-history/tasks-history.component';
 import { ReportingComponent } from './reporting/reporting.component';
+import { SettingsComponent } from './settings/settings.component';
+import { AlltasksComponent } from './alltasks/alltasks.component';
+import { AllchildsComponent } from './allchilds/allchilds.component';
 
 @NgModule({
   imports: [
@@ -33,11 +40,15 @@ import { ReportingComponent } from './reporting/reporting.component';
     ButtonModule,
     TableModule,
     InputSwitchModule,
+    ContextMenuModule,
+    TriStateCheckboxModule,
+    DialogModule,
+    GrowlModule,
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  declarations: [ChildComponent, TaskComponent, TaskAssignmentComponent, AccordionPanelComponent, ContentComponent, FeedbackComponent, TasksHistoryComponent, ReportingComponent],
-  exports: [AccordionPanelComponent, ContentComponent, ChildComponent, TaskComponent, TaskAssignmentComponent, FeedbackComponent, TasksHistoryComponent, ReportingComponent]
+  declarations: [ChildComponent, TaskComponent, TaskAssignmentComponent, AccordionPanelComponent, ContentComponent, FeedbackComponent, TasksHistoryComponent, ReportingComponent, SettingsComponent, AlltasksComponent, AllchildsComponent],
+  exports: [AccordionPanelComponent, ContentComponent, ChildComponent, TaskComponent, TaskAssignmentComponent, FeedbackComponent, TasksHistoryComponent, ReportingComponent, SettingsComponent]
 })
 export class MainModule { }

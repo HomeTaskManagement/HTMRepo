@@ -15,10 +15,14 @@ export class TaskService {
     private taskAddedSrc = new Subject<Task>();
     private taskAssignmentAddedSrc = new Subject<AssignedTask>();
     private feedbackAddedSrc = new Subject<AssignedTask>();
+    private taskAssignmentDeletededSrc = new Subject<AssignedTask>();
+    private taskReportedSrc = new Subject<AssignedTask>();
     
     taskAdded$ = this.taskAddedSrc.asObservable();
     taskAssignmentAdded$ = this.taskAssignmentAddedSrc.asObservable();
     feedbackAdded$ = this.feedbackAddedSrc.asObservable();
+    taskAssignmentDeleted$ = this.taskAssignmentDeletededSrc.asObservable();
+    taskReported$ = this.taskReportedSrc.asObservable();
     
     constructor(private httpClient: HttpClient) { }
 
@@ -74,8 +78,25 @@ export class TaskService {
             done: reportedTask.done
         };
 
-        //perform patch with the correct ID
         await this.httpClient.patch(assignedTasksUrl + '/' + reportedTask.id, dbAT).toPromise();
+        this.taskReportedSrc.next(reportedTask);
+    }
+
+    async deleteAssignedTask(assignTask: AssignedTask): Promise<void> {        
+        await this.httpClient.delete<AssignedTask>(assignedTasksUrl + '/' + assignTask.id).toPromise();
+        this.taskAssignmentDeletededSrc.next(assignTask);
+    }
+
+    async updateTaskDetails(task: Task): Promise<void> {
+        let dbTask = {
+            name: task.name,
+            description: task.description,
+            duration: task.duration,
+            minAge: task.minAge,
+            occurrence:task.occurrence
+        };
+
+        await this.httpClient.patch(tasksUrl + '/' + task.id, dbTask).toPromise();
     }
 
 }

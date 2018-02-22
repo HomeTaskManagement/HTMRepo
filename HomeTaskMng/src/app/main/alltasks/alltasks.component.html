@@ -1,0 +1,69 @@
+<br/>
+<span>Tasks</span>
+<p-table #dt [columns]="cols" [value]="tasks" selectionMode="single" [(selection)]="selectedChild" (onRowSelect)="onRowSelect($event)" [scrollable]="true" scrollHeight="150px">
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th *ngFor="let col of columns">
+        {{col.header}}
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <tr [pSelectableRow]="rowData">
+      <td *ngFor="let col of columns">
+        {{rowData[col.field]}}
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<p-dialog appendTo="body" [width]="330" [height]="430" header="Task Details" [(visible)]="displayDialog" [responsive]="true"
+  showEffect="fade" [modal]="true" [width]="300">
+  <div class="ui-g ui-fluid" *ngIf="task">
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="name">Name</label>
+      </div>
+      <div class="ui-g-8">
+        <label>{{task.name}}</label>
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="description">Description</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="description" [(ngModel)]="task.description" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="duration">Duration</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="duration" [(ngModel)]="task.duration" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="minAge">MinAge</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="minAge" [(ngModel)]="task.minAge" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="occurrence">Occurrence</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="occurrence" [(ngModel)]="task.occurrence" />
+      </div>
+    </div>
+  </div>
+  <p-footer>
+    <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+    </div>
+  </p-footer>
+</p-dialog>

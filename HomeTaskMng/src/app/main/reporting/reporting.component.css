@@ -88,6 +88,20 @@
       text-decoration: line-through;
       color: rgba(0,0,0,.3);
   }
+
+  p-triStateCheckbox{
+    position: relative;
+    font-size: 12px;
+    top: 14px;
+    right: 12px;
+      float: right;
+  }
+
+  p-triStateCheckbox:checked + label{
+    text-decoration: line-through;
+    color: rgba(0,0,0,.3);
+}
+
   .list{
       list-style: none;
       color: rgba(0,0,0,.7);
@@ -101,10 +115,10 @@
   }
   label{
     padding: 10px;
-      cursor: pointer;
-      float: left;
-      width: 95%;
-      transition: all .3s ease;
+    cursor: pointer;
+    float: left;
+    width: 95%;
+    transition: all .3s ease;
   }
 
   p-button{
