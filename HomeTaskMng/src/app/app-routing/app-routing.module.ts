@@ -6,7 +6,9 @@ import { ContentComponent } from "../main/content/content.component";
 
 const routes : Route[] = [
   { path: 'login', component: LoginComponent },
-  { path: 'Content', component: ContentComponent },
+  { path: 'logout', component: LoginComponent },
+  { path: 'logout/:number', component: LoginComponent },
+  { path: 'content/:number', component: ContentComponent },
   { path: 'login/:number', component: LoginComponent }
 ]
 
