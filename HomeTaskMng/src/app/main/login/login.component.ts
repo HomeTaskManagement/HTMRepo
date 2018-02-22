@@ -24,9 +24,9 @@ export class LoginComponent implements OnInit {
   }
    Login(username, password)
    {
-     if (password=='1234')
+     if (password==='1234')
      {
-       if (username=='father' || username=='mother')
+       if (username==='admin')
        {
         this.edited = true;
         this.router.navigate(['content']);
