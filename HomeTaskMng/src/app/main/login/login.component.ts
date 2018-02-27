@@ -18,30 +18,30 @@ export class LoginComponent implements OnInit {
   private worngParameters: boolean;
   private edited: boolean;
   private currentUser: Login = new Login();
-  private userName : string;
-  private userPass : string;
+  private userName: string;
+  private userPass: string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private loginService: LoginService) { }
 
   ngOnInit() {
   }
   Login() {
-    if (this.userPass === "1234") {
-      if (this.userName === 'admin') {
-        this.edited = true;
-        this.router.navigate(['content']);
-      }
-      else {
-        this.childExists = false;
-        this.LoginService.checkChildExists(this.userName).then(result => {
-          if (result) {
-            this.router.navigate(['content']);
-          }
-          else {
-            this.childExists = result;
-          }
-        });
-      }
+    if (this.userPass === "123456" && this.userName === 'admin') {
+      this.edited = true;
+    }
+    else if (this.userPass === "1234") {
+      this.currentUser.password = this.userPass;
+      this.currentUser.username = this.userName;
+
+      this.childExists = false;
+      this.loginService.checkChildExists(this.currentUser).then(result => {
+        if (result) {
+          this.router.navigate(['content']);
+        }
+        else {
+          this.childExists = result;
+        }
+      });
     }
     else {
       this.worngParameters = false;

@@ -12,9 +12,10 @@ export class LoginService {
     baseUrl: string = 'http://localhost:3000';
 
 
-    constructor(private httpClient: HttpClient, private childService: ChildService) { 
+    constructor(private httpClient: HttpClient, private childService: ChildService) {
         this.childService.getChildren().subscribe(childs => {
             this.children = childs;
+            console.log('registered children: ', this.children);
         });
     }
 
@@ -22,18 +23,11 @@ export class LoginService {
     // public password;
 
     async checkChildExists(child: Login): Promise<boolean> {
-  
 
-        // let childUrl = this.baseUrl + '/children?userName=' + DB.children.name;
-        // let childFromDB = await this.httpClient.get<Login[]>(childUrl).toPromise();
-        // if (childFromDB.length>0)
-        //  {
-        //     return true;
-        // } 
-        // else
-        //  {
-        //     return false;
-        // }
+        if (!this.children) return false;
+
+        let tmpChild = this.children.filter(c => c.name === child.username);
+
         return true;
     }
 
