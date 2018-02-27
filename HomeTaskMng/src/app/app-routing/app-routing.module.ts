@@ -8,7 +8,7 @@ const routes : Route[] = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LoginComponent },
   { path: 'logout/:number', component: LoginComponent },
-  { path: 'content/:number', component: ContentComponent },
+  { path: 'content', component: ContentComponent },
   { path: 'login/:number', component: LoginComponent }
 ]
 
