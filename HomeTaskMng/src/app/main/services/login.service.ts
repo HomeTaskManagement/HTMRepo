@@ -24,9 +24,18 @@ export class LoginService {
 
     async checkChildExists(child: Login): Promise<boolean> {
 
-        if (!this.children) return false;
+        if (child.password !== "1234") {
+            return false;
+        }
+        
+        if (!this.children) {
+            return false;
+        }
 
         let tmpChild = this.children.filter(c => c.name === child.username);
+        if (!tmpChild) {
+            return false;
+        }
 
         return true;
     }
