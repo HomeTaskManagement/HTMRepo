@@ -8,6 +8,7 @@ import { MainModule } from './main/main.module';
 import { ChildService } from './main/services/child.service';
 import { TaskService } from './main/services/task.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { LoginService } from './main/services/login.service';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     AppRoutingModule
 
   ],
-  providers: [ChildService, TaskService],
+  providers: [ChildService, TaskService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

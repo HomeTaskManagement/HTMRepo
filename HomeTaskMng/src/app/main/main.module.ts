@@ -39,6 +39,6 @@ import { LoginComponent } from './login/login.component';
     BrowserAnimationsModule
   ],
   declarations: [ChildComponent, TaskComponent, TaskAssignmentComponent, AccordionPanelComponent, ContentComponent, FeedbackComponent, TasksHistoryComponent, ReportingComponent, LoginComponent],
-  exports: [AccordionPanelComponent, ContentComponent, ChildComponent, TaskComponent, TaskAssignmentComponent, FeedbackComponent, TasksHistoryComponent, ReportingComponent]
+  exports: [AccordionPanelComponent, ContentComponent, ChildComponent, TaskComponent, TaskAssignmentComponent, FeedbackComponent, TasksHistoryComponent, ReportingComponent, LoginComponent]
 })
 export class MainModule { }

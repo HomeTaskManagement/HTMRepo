@@ -29,7 +29,7 @@
         			    	<div class="col-lg-12">
         			    	    <label>Username</label>
         			    	    <div class="form-group">
-									<input type="username" name="username" id="username" class="form-control" placeholder="" required="" autofocus="">
+									<input type="username" [(ngModel)]="userName" name="username" id="username" class="form-control" placeholder="" required="" autofocus="">
 									<p *ngIf="childExists == false">user doesn't exist</p>
         			    		</div>
         			    	</div>
@@ -37,7 +37,7 @@
         			    	<div class="col-lg-12">
         			    	    <label>Password</label>
         			    	    <div class="form-group">
-									<input type="password" name="password" id="password" class="form-control" placeholder="" required="" autofocus="">
+									<input type="password" [(ngModel)]="userPass" name="password" id="password" class="form-control" placeholder="" required="" autofocus="">
         			    		</div>
         			    	</div>
         			    	
