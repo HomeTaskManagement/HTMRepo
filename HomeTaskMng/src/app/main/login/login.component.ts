@@ -26,16 +26,21 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   Login() {
+    this.childExists = false;
+
     if (this.userPass === "123456" && this.userName === 'admin') {
       this.edited = true;
+      this.childExists = true;
+      this.router.navigate(['content']);    
     }
+
     else if (this.userPass === "1234") {
       this.currentUser.password = this.userPass;
       this.currentUser.username = this.userName;
 
-      this.childExists = false;
       this.loginService.checkChildExists(this.currentUser).then(result => {
         if (result) {
+          this.childExists = true;
           this.router.navigate(['content']);
         }
         else {
