@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
 
       this.loginService.checkChildExists(this.currentUser).then(result => {
         if (result) {
+          this.edited = false;
           this.childExists = true;
           this.router.navigate(['content']);
         }
