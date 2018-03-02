@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class ContentComponent implements OnInit {
 
   private number: number;
+  adminEnter = true;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
