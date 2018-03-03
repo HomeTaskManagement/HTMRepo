@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
 
   private childExists: boolean;
   private worngParameters: boolean;
-  private edited: boolean;
   private currentUser: Login = new Login();
   private userName: string;
   private userPass: string;
@@ -46,7 +45,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['content']);
         }
         else {
-          this.childExists = result;
+          this.childExists = false;
         }
       });
     }
