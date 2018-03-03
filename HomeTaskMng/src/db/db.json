@@ -49,7 +49,7 @@
     {
       "name": "floor washing",
       "description": "kitchen and living room",
-      "duration": 1,
+      "duration": "2",
       "minAge": 15,
       "occurrence": 3,
       "id": 2
@@ -115,6 +115,15 @@
       "date": "02/22/2018 9:45 AM",
       "feedback": 1,
       "feedbackCounter": 1,
+      "done": false
+    },
+    {
+      "id": 6,
+      "taskName": "floor washing",
+      "childName": "Noa",
+      "date": "03/06/2018 11:09 PM",
+      "feedback": 0,
+      "feedbackCounter": 0,
       "done": false
     }
   ]
