@@ -20,5 +20,6 @@ export class ContentComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private loginService: LoginService) { }
 
   ngOnInit() {
+    this.loggedinUsername = this.loginService.currUser.username;
   }
 }
