@@ -33,9 +33,6 @@ export class LoginComponent implements OnInit {
 
     if (this.userPass === "123456" && this.userName === 'admin') {
       this.childExists = true;
-      ContentComponent.prototype.adminEnter = true;
-      AppComponent.prototype.showLogin= false;
-      AppComponent.prototype.showLogout= true;
       this.router.navigate(['content']);    
     }
 
@@ -46,9 +43,6 @@ export class LoginComponent implements OnInit {
       this.loginService.checkChildExists(this.currentUser).then(result => {
         if (result) {
           this.childExists = true;
-          ContentComponent.prototype.adminEnter = false;
-          AppComponent.prototype.showLogin= false;
-          AppComponent.prototype.showLogout= true;
           this.router.navigate(['content']);
         }
         else {

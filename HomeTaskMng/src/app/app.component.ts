@@ -8,6 +8,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'home task managmement';
-  showLogin = true;
-  showLogout = false;
 }
