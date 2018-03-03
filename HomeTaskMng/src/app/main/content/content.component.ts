@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'content',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  private number: number;
+  adminEnter = true;
+
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-  }
+    this.route.paramMap.subscribe(params=> {
+      this.number = +params.get('number');
 
+     // this.router.navigate(['logout',111]);
+  });
+  }
 }

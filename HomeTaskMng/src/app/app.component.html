@@ -1,52 +1,13 @@
-<!-- <div class="container">        
-        <header>
-           <h1>ניהול משימות ביתיות</h1>
-        </header>
-          
-        <nav>
-            <accordion-panel></accordion-panel>
-        </nav>
-        
-        <article>
-            <content></content>
-        </article>
-        
-        <footer>מגישות: מרים ונעמה </footer>        
-</div> -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
+<nav class="horizontal-nav full-width horizontalNav-notprocessed">
+  <ul>
+    <li *ngIf="showLogin == true"><a routerLink="login" routerLinkActive="current">Login</a></li>
+    <li *ngIf="showLogout == true"><a [routerLink]="['login']" routerLinkActive="current">Logout</a></li>
+  </ul>
+</nav>
 
-<section id="book">
-  <input id="showradio" type="checkbox" name="navigation" checked="checked" />
-  <label for="showradio" class="shownavigation"></label>
+<router-outlet></router-outlet> 
 
-  <input class="move" id="page1" type="radio" name="navigation" checked="checked" />
-  <label data-page="0" for="page1" class="check radio home"></label>
-
-  <input class="move" id="page2" type="radio" name="navigation" />
-  <label data-page="100" for="page2" class="check radio mail"></label>
-
-  <input class="move" id="page3" type="radio" name="navigation" />
-  <label data-page="200" for="page3" class="check radio book"></label>
-
-  <input class="move" id="page4" type="radio" name="navigation" />
-  <label data-page="300" for="page4" class="check radio find"></label>
-
-
-  <section id="content">
-    <article class="page" id="one">
-      <reporting></reporting>
-    </article>
-
-    <article class="page" id="two">
-      <feedback></feedback>
-    </article>
-
-    <article class="page" id="three">
-      <tasks-history></tasks-history>
-    </article>
-
-    <article class="page" id="four">
-      <settings></settings>
-    </article>
-  </section>
-</section>
