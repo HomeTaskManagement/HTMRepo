@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { Child } from "../model/child";
 import { ChildService } from './child.service';
 import { HttpClient } from '@angular/common/http';
-import { Login } from "../model/login";
+import { LoggedinUser } from "../model/login";
 
 
 @Injectable()
 export class LoginService {
     private children: Child[];
+    public currUser : LoggedinUser;
 
 //    baseUrl: string = 'http://localhost:3000';
 
@@ -22,7 +23,7 @@ export class LoginService {
     // public username;
     // public password;
 
-    async checkChildExists(child: Login): Promise<boolean> {
+    async checkChildExists(child: LoggedinUser): Promise<boolean> {
 
         if (child.password !== "1234") {
             return false;

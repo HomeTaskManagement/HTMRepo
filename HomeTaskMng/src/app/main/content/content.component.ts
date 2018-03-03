@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service';
+import { LoggedinUser } from "../model/login";
 
 
 
@@ -9,18 +11,14 @@ import { Router } from '@angular/router';
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
+  
+
 export class ContentComponent implements OnInit {
 
-  private number: number;
-  adminEnter = true;
+  private loggedinUsername : string;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private loginService: LoginService) { }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params=> {
-      this.number = +params.get('number');
-
-     // this.router.navigate(['logout',111]);
-  });
   }
 }
