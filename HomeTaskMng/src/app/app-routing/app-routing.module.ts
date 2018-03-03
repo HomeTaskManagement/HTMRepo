@@ -7,7 +7,8 @@ import { ContentComponent } from "../main/content/content.component";
 const routes : Route[] = [
   { path: 'login', component: LoginComponent },
   // { path: 'logout', component: LoginComponent },
-  { path: 'login/:content', component: LoginComponent }
+  { path: 'login/:content', component: LoginComponent },
+  { path: 'content', component: ContentComponent }
 ]
 
 @NgModule({
