@@ -20,7 +20,7 @@ ul{list-style:none;}
 }
 .horizontal-nav ul li a {
   display: block;
-  padding: 10px 20px;
+  padding: 7px;
   color: #fff;
   border-top: 1px solid rgba(255,255,255, 0.25);
   border-right: 1px solid rgba(255,255,255, 0.25);

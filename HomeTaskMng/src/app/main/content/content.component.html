@@ -28,12 +28,11 @@
   <input class="move" id="page3" type="radio" name="navigation" />
   <label data-page="200" for="page3" class="check radio book"></label>
 
-  <input class="move" id="page4" type="radio" name="navigation" />
-  <label data-page="300" for="page4" class="check radio find"></label>
+  <input class="move" id="page4" type="radio" name="navigation" *ngIf="isAdmin"/>
+  <label data-page="300" for="page4" class="check radio find" *ngIf="isAdmin"></label>
 
 
   <section id="content">
-    <span>Hi {{loggedinUsername}}</span>
     <article class="page" id="one">
       <reporting></reporting>
     </article>
@@ -46,7 +45,7 @@
       <tasks-history></tasks-history>
     </article>
 
-    <article class="page" id="four">
+    <article class="page" id="four" *ngIf="isAdmin">
       <settings></settings>
     </article>
 

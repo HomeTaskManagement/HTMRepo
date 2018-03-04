@@ -26,15 +26,9 @@
     },
     {
       "name": "Daniel",
-      "age": 8,
+      "age": "8",
       "availability": 6,
       "id": 5
-    },
-    {
-      "id": 6,
-      "name": "rom",
-      "age": 1,
-      "availability": "1"
     }
   ],
   "Tasks": [
@@ -61,14 +55,6 @@
       "minAge": 15,
       "occurrence": 7,
       "id": 3
-    },
-    {
-      "id": 4,
-      "name": "new task",
-      "description": "ddd",
-      "duration": 1,
-      "minAge": 3,
-      "occurrence": 4
     }
   ],
   "assignedTasks": [
@@ -78,7 +64,7 @@
       "date": "02/10/2018 22:15 PM",
       "feedback": 0,
       "feedbackCounter": 0,
-      "done": false,
+      "done": true,
       "id": 1
     },
     {
@@ -94,37 +80,10 @@
       "taskName": "floor washing",
       "childName": "Noa",
       "date": "02/10/2018 10:12 PM",
-      "feedback": 0,
-      "feedbackCounter": 0,
-      "done": false,
-      "id": 3
-    },
-    {
-      "id": 4,
-      "taskName": "new task",
-      "childName": "rom",
-      "date": "02/21/2018 9:37 AM",
-      "feedback": 0,
-      "feedbackCounter": 0,
-      "done": false
-    },
-    {
-      "id": 5,
-      "taskName": "dishwashing",
-      "childName": "rom",
-      "date": "02/22/2018 9:45 AM",
-      "feedback": 1,
+      "feedback": 2,
       "feedbackCounter": 1,
-      "done": false
-    },
-    {
-      "id": 6,
-      "taskName": "floor washing",
-      "childName": "Noa",
-      "date": "03/06/2018 11:09 PM",
-      "feedback": 0,
-      "feedbackCounter": 0,
-      "done": false
+      "done": true,
+      "id": 3
     }
   ]
 }

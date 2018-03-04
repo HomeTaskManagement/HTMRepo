@@ -7,6 +7,7 @@ import { Message } from 'primeng/api';
 import { environment } from '../../../environments/environment';
 import { AssignedTask } from '../model/assignedTask';
 import { TaskService } from '../services/task.service';
+import { LoginService } from '../services/login.service';
 
 
 @Component({
@@ -26,8 +27,9 @@ export class TasksHistoryComponent implements OnInit {
   private selectedTask: AssignedTask;
   private assignedTasks = new Array<AssignedTask>();
   private msgs: Message[] = [];
+  private isAdmin: boolean;
 
-  constructor(private taskService: TaskService) {
+  constructor(private taskService: TaskService, private loginService: LoginService) {
     // listen to new task assignment added event
     this.newTaskAssignedSubscription = taskService.taskAssignmentAdded$.subscribe(
       assignedTask => {
@@ -52,6 +54,8 @@ export class TasksHistoryComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.isAdmin = (this.loginService.currUser.username === 'admin');
+
     this.cols = [
       { field: 'taskName', header: 'Task' },
       { field: 'childName', header: 'Child' },
@@ -63,7 +67,7 @@ export class TasksHistoryComponent implements OnInit {
     this.getAssignedTasks();
 
     this.items = [
-      { label: 'Delete', icon: 'fa-close', command: (event) => this.delete(this.selectedTask) }
+      { label: 'Delete', disabled: !this.isAdmin, icon: 'fa-close', command: (event) => this.delete(this.selectedTask) }
     ];
   }
 
@@ -86,7 +90,7 @@ export class TasksHistoryComponent implements OnInit {
     this.assignedTasks.splice(index, 1);
   }
 
-  showDelMsg(selectedAssignedTask){
+  showDelMsg(selectedAssignedTask) {
     this.msgs = [];
     this.msgs.push({ severity: 'success', summary: 'Success delete assignment', detail: `The task ${selectedAssignedTask.taskName} is not assigned to ${selectedAssignedTask.childName} anymore.` });
   }

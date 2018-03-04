@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { TaskService } from '../services/task.service';
 import { AssignedTask } from '../model/assignedTask';
 import * as moment from 'moment';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'reporting',
@@ -12,16 +13,15 @@ import * as moment from 'moment';
 export class ReportingComponent implements OnInit {
 
   private allAssignedToMeTasks: AssignedTask[] = [];
-  //private loginUser: string = 'Noa' //todo: get from service;
-  private loginUser: string;
 
   private dueDate: Date;
   private formatDueDate: string;
   private tomeByDateTasks: AssignedTask[] = [];
+  private loggedinUsername: string;
 
   newTaskAssignedSubscription: Subscription;
 
-  constructor(private taskService: TaskService) {
+  constructor(private taskService: TaskService, private loginService: LoginService) {
     // listen to new task assignment added event
     this.newTaskAssignedSubscription = taskService.taskAssignmentAdded$.subscribe(
       assignedTask => {
@@ -32,13 +32,14 @@ export class ReportingComponent implements OnInit {
 
   ngOnInit() {
     this.initAllAssignedToMeTasks();
+    this.loggedinUsername = this.loginService.currUser.username;
   }
 
   initAllAssignedToMeTasks() {
     this.taskService.getAssignedTasks().subscribe(taskAssignment => {
       this.allAssignedToMeTasks = taskAssignment;
-      if (this.loginUser) {
-        this.allAssignedToMeTasks = taskAssignment.filter(s => s.childName === this.loginUser);
+      if (this.loggedinUsername && this.loginService.currUser.username !== 'admin') {
+        this.allAssignedToMeTasks = taskAssignment.filter(s => s.childName === this.loggedinUsername);
       }
     });
   }

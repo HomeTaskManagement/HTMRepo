@@ -16,10 +16,12 @@ import { LoggedinUser } from "../model/login";
 export class ContentComponent implements OnInit {
 
   private loggedinUsername : string;
+  private isAdmin :boolean;
 
   constructor(private route: ActivatedRoute, private router: Router, private loginService: LoginService) { }
 
   ngOnInit() {
     this.loggedinUsername = this.loginService.currUser.username;
+    this.isAdmin = (this.loginService.currUser.username === 'admin');
   }
 }
