@@ -7,21 +7,19 @@ import { LoggedinUser } from "../model/login";
 
 @Injectable()
 export class LoginService {
+
     private children: Child[];
-    public currUser : LoggedinUser;
-
-//    baseUrl: string = 'http://localhost:3000';
-
+    public currUser : LoggedinUser = new LoggedinUser();
 
     constructor(private httpClient: HttpClient, private childService: ChildService) {
         this.childService.getChildren().subscribe(childs => {
             this.children = childs;
             console.log('registered children: ', this.children);
         });
-    }
 
-    // public username;
-    // public password;
+        this.currUser.username = '';
+        this.currUser.password = '';
+    }
 
     async checkChildExists(child: LoggedinUser): Promise<boolean> {
 
