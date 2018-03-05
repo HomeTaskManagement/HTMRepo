@@ -7,6 +7,8 @@ import { AssignedTask } from '../model/assignedTask';
 import { Message } from 'primeng/api';
 import * as moment from 'moment';
 import { environment } from '../../../environments/environment';
+import { LoginService } from '../services/login.service';
+import { LoggedinUser } from "../model/login";
 
 @Component({
   selector: 'feedback',
@@ -26,7 +28,7 @@ export class FeedbackComponent implements OnInit {
 
   newTaskAssignedSubscription: Subscription;
 
-  constructor(private taskService: TaskService) {
+  constructor(private taskService: TaskService, private loginService: LoginService) {
     // listen to new task assignment added event
     this.newTaskAssignedSubscription = taskService.taskAssignmentAdded$.subscribe(
       assignedTask => {
@@ -50,12 +52,12 @@ export class FeedbackComponent implements OnInit {
     this.formatDueDate = moment(this.dueDate).format('L');
     //let filteredTasks = this.allAssignedTasks.filter(t => t.taskName === 'ww');
 
-    this.tasksByDate = new Array<Object>();
-    this.allAssignedTasks.forEach(task => {
-      let fAssignedTasks = moment(task.date).format('L');
-      if (fAssignedTasks === this.formatDueDate)
-        this.tasksByDate.push({ 'label': task.taskName, 'value': task })
-    });
+     this.tasksByDate = new Array<Object>();
+     this.allAssignedTasks.forEach(task => {
+       let fAssignedTasks = moment(task.date).format('L');
+      if (fAssignedTasks === this.formatDueDate && task.childName != this.loginService.currUser.username)
+         this.tasksByDate.push({ 'label': task.taskName, 'value': task })
+     });
   }
 
   sendFeedback() {
