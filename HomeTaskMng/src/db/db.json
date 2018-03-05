@@ -30,7 +30,7 @@
       "availability": 6,
       "id": 5
     }
- ],
+  ],
   "Tasks": [
     {
       "name": "dishwashing",
@@ -71,7 +71,7 @@
       "minAge": 10,
       "occurrence": 7,
       "id": 5
-    } 
+    }
   ],
   "assignedTasks": [
     {
@@ -100,6 +100,24 @@
       "feedbackCounter": 1,
       "done": true,
       "id": 3
+    },
+    {
+      "id": 4,
+      "taskName": "laundry folding",
+      "childName": "Shira",
+      "date": "03/06/2018 12:02 AM",
+      "feedback": 0,
+      "feedbackCounter": 0,
+      "done": false
+    },
+    {
+      "id": 5,
+      "taskName": "taking out the trash",
+      "childName": "David",
+      "date": "Invalid date",
+      "feedback": 0,
+      "feedbackCounter": 0,
+      "done": false
     }
   ]
 }
