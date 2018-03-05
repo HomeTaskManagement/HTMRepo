@@ -30,7 +30,7 @@
       "availability": 6,
       "id": 5
     }
-  ],
+ ],
   "Tasks": [
     {
       "name": "dishwashing",
@@ -50,12 +50,28 @@
     },
     {
       "name": "laundry folding",
-      "description": "can divide into two children",
+      "description": "put laundry folded in closets",
       "duration": 3,
       "minAge": 15,
       "occurrence": 7,
       "id": 3
-    }
+    },
+    {
+      "name": "run a washing machine",
+      "description": "run on an appropriate program",
+      "duration": 0.15,
+      "minAge": 14,
+      "occurrence": 7,
+      "id": 4
+    },
+    {
+      "name": "taking out the trash",
+      "description": "When the trash can is full",
+      "duration": 0.2,
+      "minAge": 10,
+      "occurrence": 7,
+      "id": 5
+    } 
   ],
   "assignedTasks": [
     {
