@@ -5,11 +5,11 @@ import { LoginComponent } from '../main/login/login.component';
 import { ContentComponent } from "../main/content/content.component";
 
 const routes : Route[] = [
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
-  // { path: 'logout', component: LoginComponent },
-  // { path: 'login/content', component: LoginComponent },
-  { path: 'content', component: ContentComponent }
+  { path: 'login/content', component: ContentComponent }
 ]
+
 
 @NgModule({
   imports:[

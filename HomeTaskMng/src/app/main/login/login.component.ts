@@ -9,7 +9,6 @@ import { AppComponent } from '../../app.component';
 import { ContentComponent } from '../content/content.component';
 
 
-
 @Component({
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
@@ -17,8 +16,9 @@ import { ContentComponent } from '../content/content.component';
 export class LoginComponent implements OnInit {
   LoginService: any;
 
-  private childExists: boolean;
-  private worngParameters: boolean;
+  private userExists: boolean;
+  private worngPassword: boolean;
+  private emptyFields: boolean;
   private currentUser: LoggedinUser = new LoggedinUser();
   private userName: string;
   private userPass: string;
@@ -27,35 +27,61 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+
   Login() {
-    this.childExists = false;
+    this.userExists = false;
 
     this.currentUser.password = this.userPass;
     this.currentUser.username = this.userName;
 
-    if (this.userPass === "123456" && this.userName === 'admin') {
-      this.childExists = true;
-      this.router.navigate(['content']);   
-      this.loginService.currUser = this.currentUser;
+    if (this.userPass.length == 0 || this.userName.length ==0){
+      this.emptyFields = true;
+      this.userExists = true;
+      this.worngPassword = false;
+      }
+
+     else{ 
+
+   if ( this.userName === 'admin'){
+        if (this.userPass === "123456"){
+          this.emptyFields = false;
+          this.worngPassword = false;
+          this.userExists = true;
+          this.router.navigate(['login/content']);   
+          this.loginService.currUser = this.currentUser;
+         }
+        else{
+         this.emptyFields = false;
+         this.worngPassword =true;
+         this.userExists=true;
+       }
     }
 
     else if (this.userPass === "1234") {
       this.loginService.checkChildExists(this.currentUser).then(result => {
         if (result) {
-          this.childExists = true;
-          this.router.navigate(['content']);
+          this.emptyFields = false;
+          this.worngPassword = false;
+          this.userExists = true;
+          this.router.navigate(['login/content']);
           this.loginService.currUser = this.currentUser;
         }
         else {
-          this.childExists = false;
+          this.emptyFields = false;
+          this.worngPassword = false;
+          this.userExists = false;
         }
       });
     }
     else {
-      this.worngParameters = false;
+      this.emptyFields = false;
+      this.worngPassword =true;
+      this.worngPassword = true;
     }
 
   }
 
 }
+}
+
 
