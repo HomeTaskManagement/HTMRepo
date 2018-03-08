@@ -85,6 +85,8 @@ export class TaskAssignmentComponent implements OnInit {
     console.log(this.task, this.child, this.dueDate);
     let formatDate = moment(this.dueDate).format('L LT');
     let taskToAssign = new AssignedTask(null, this.task.name, this.child.name, formatDate, 0, 0, false);
+    
+    // Assuming that each child receives only one task per day
     if (this.task.duration <= this.child.availability && this.task.minAge <= this.child.age) {
       this.taskService.assignTask(taskToAssign).then(() => {
         console.log(taskToAssign);
