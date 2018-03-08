@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
     else {
       this.emptyFields = false;
       this.worngPassword =true;
-      this.worngPassword = true;
+      this.userExists = true;
     }
 
   }
