@@ -95,7 +95,7 @@ export class TaskAssignmentComponent implements OnInit {
    // else {
      // this.msgs.push({ severity: 'unsuccess', summary: 'Unsuccess assign task', detail: `task ${this.task.name} can't assigned to ${this.child.name}` });
    // }
-    this.clearFields();
+   // this.clearFields();
   }
 
   clearFields() {

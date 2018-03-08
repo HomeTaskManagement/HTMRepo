@@ -29,6 +29,12 @@
       "age": "8",
       "availability": 6,
       "id": 5
+    },
+    {
+      "id": 6,
+      "name": "ron",
+      "age": 6,
+      "availability": "3"
     }
   ],
   "Tasks": [
@@ -71,6 +77,14 @@
       "minAge": 10,
       "occurrence": 7,
       "id": 5
+    },
+    {
+      "id": 6,
+      "name": "new task",
+      "description": "desc",
+      "duration": 1,
+      "minAge": 3,
+      "occurrence": 1
     }
   ],
   "assignedTasks": [
@@ -96,8 +110,8 @@
       "taskName": "floor washing",
       "childName": "Noa",
       "date": "02/12/2018 10:12 PM",
-      "feedback": 2,
-      "feedbackCounter": 1,
+      "feedback": 9,
+      "feedbackCounter": 3,
       "done": true,
       "id": 3
     },
@@ -106,18 +120,45 @@
       "taskName": "laundry folding",
       "childName": "Shira",
       "date": "03/06/2018 12:02 AM",
-      "feedback": 0,
-      "feedbackCounter": 0,
+      "feedback": 1,
+      "feedbackCounter": 1,
       "done": false
     },
     {
       "id": 5,
       "taskName": "taking out the trash",
       "childName": "David",
-      "date": "Invalid date",
+      "date": "03/07/2018 5:27 PM",
       "feedback": 0,
       "feedbackCounter": 0,
       "done": false
+    },
+    {
+      "id": 6,
+      "taskName": "dishwashing",
+      "childName": "Ariel",
+      "date": "03/07/2018 5:29 PM",
+      "feedback": 0,
+      "feedbackCounter": 0,
+      "done": false
+    },
+    {
+      "id": 7,
+      "taskName": "run a washing machine",
+      "childName": "Shira",
+      "date": "03/07/2018 5:31 PM",
+      "feedback": 0,
+      "feedbackCounter": 0,
+      "done": false
+    },
+    {
+      "id": 8,
+      "taskName": "new task",
+      "childName": "ron",
+      "date": "03/07/2018 6:11 PM",
+      "feedback": 5,
+      "feedbackCounter": 1,
+      "done": true
     }
   ]
 }

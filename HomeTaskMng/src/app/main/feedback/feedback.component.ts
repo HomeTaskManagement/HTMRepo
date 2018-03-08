@@ -52,12 +52,12 @@ export class FeedbackComponent implements OnInit {
     this.formatDueDate = moment(this.dueDate).format('L');
     //let filteredTasks = this.allAssignedTasks.filter(t => t.taskName === 'ww');
 
-     this.tasksByDate = new Array<Object>();
-     this.allAssignedTasks.forEach(task => {
-       let fAssignedTasks = moment(task.date).format('L');
+    this.tasksByDate = new Array<Object>();
+    this.allAssignedTasks.forEach(task => {
+      let fAssignedTasks = moment(task.date).format('L');
       if (fAssignedTasks === this.formatDueDate && task.childName != this.loginService.currUser.username)
-         this.tasksByDate.push({ 'label': task.taskName, 'value': task })
-     });
+        this.tasksByDate.push({ 'label': task.taskName, 'value': task })
+    });
   }
 
   sendFeedback() {
@@ -70,7 +70,7 @@ export class FeedbackComponent implements OnInit {
   clearFields() {
     this.dueDate = null;
     this.selectedTask = null;
-    this.score = null;    
-    setTimeout(() => this.msgs = [], environment.msgTimeout);    
+    this.score = null;
+    setTimeout(() => this.msgs = [], environment.msgTimeout);
   }
 }
