@@ -32,7 +32,7 @@ export class LoginService {
         }
 
         let tmpChild = this.children.filter(c => c.name === child.username);
-        if (!tmpChild) {
+        if (tmpChild.length === 0) {
             return false;
         }
 
