@@ -85,17 +85,17 @@ export class TaskAssignmentComponent implements OnInit {
     console.log(this.task, this.child, this.dueDate);
     let formatDate = moment(this.dueDate).format('L LT');
     let taskToAssign = new AssignedTask(null, this.task.name, this.child.name, formatDate, 0, 0, false);
-  //  if (this.task.duration <= this.child.availability && this.task.minAge >= this.child.age) {
+    if (this.task.duration <= this.child.availability && this.task.minAge <= this.child.age) {
       this.taskService.assignTask(taskToAssign).then(() => {
         console.log(taskToAssign);
         this.msgs.push({ severity: 'success', summary: 'Success assign task', detail: `task ${this.task.name} assigned to ${this.child.name}` });
         this.clearFields();
       });
-  //  }
-   // else {
-     // this.msgs.push({ severity: 'unsuccess', summary: 'Unsuccess assign task', detail: `task ${this.task.name} can't assigned to ${this.child.name}` });
-   // }
-   // this.clearFields();
+    }
+    else {
+      this.msgs.push({ severity: 'error', summary: 'Unsuccess assign task (age or availability is not match)', detail: `task ${this.task.name} can't assigned to ${this.child.name}` });
+      this.clearFields();
+    }
   }
 
   clearFields() {
