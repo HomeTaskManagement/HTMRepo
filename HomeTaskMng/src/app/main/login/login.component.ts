@@ -34,15 +34,13 @@ export class LoginComponent implements OnInit {
     this.currentUser.password = this.userPass;
     this.currentUser.username = this.userName;
 
-    if (this.userPass.length == 0 || this.userName.length ==0){
+    if (!this.userPass.length || !this.userName.length){
       this.emptyFields = true;
       this.userExists = true;
       this.worngPassword = false;
       }
 
-     else{ 
-
-   if ( this.userName === 'admin'){
+  else if ( this.userName === 'admin'){
         if (this.userPass === "123456"){
           this.emptyFields = false;
           this.worngPassword = false;
@@ -82,6 +80,6 @@ export class LoginComponent implements OnInit {
   }
 
 }
-}
+
 
 
